@@ -4,27 +4,110 @@
     <meta charset="utf-8">
     <title>Vanilla JS Shopping Cart</title>
     <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
-    </style>
     <link href="index.css" rel="stylesheet">
     <script src="index.js"></script>
 </head>
 <body>
     <div class="app_body">
         <div class="shopping_cart_body">
-            <div class="shopping_cart_headline">
+            <div class="shopping_cart_div">
                 <h2 class="shopping_cart_h2"> Shopping Cart</h2>
+                <hr class="shopping_hr">
                 <div class="shopping_cart_details">
-                    <p class="shopping_cart_p">Product Details</p>
-                    <p class="shopping_cart_p">Quantity</p>
-                    <p class="shopping_cart_p">Price</p>
-                    <p class="shopping_cart_p">Total</p>
+                    <p class="shopping_cart_p shopping_cart_p_1">Product Details</p>
+                    <p class="shopping_cart_p shopping_cart_p_2">Quantity</p>
+                    <p class="shopping_cart_p shopping_cart_p_3">Price</p>
+                    <p class="shopping_cart_p  shopping_cart_p_4">Total</p>
                 </div>
-                <div class="shopping_item"></div>
+                <div class="item">
+                    <div class="item_img_div">
+                        <img class="item_img" src="goku.jpg">
+                    </div>
+                    <div class="item_text">
+                        <p class="item_headline">Goku POP</p>
+                        <p class="item_description">Product Code GOKU</p>
+                    </div>
+                    <div class="item_quantity_div">
+                        <button class="item_quantity_btn item_quantity_minus">-</button>
+                        <p class="item_quantity">2</p>
+                        <button class="item_quantity_btn item_quantity_plus">+</button>
+                    </div>
+                    <div class="item_price_div">
+                        <p class="item_price">5 €</p>
+                    </div>
+                    <div class="item_total_div">
+                        <p class="item_total"><span class="item_price_span">10</span> €</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_img_div">
+                        <img class="item_img" src="naruto.jpg">
+                    </div>
+                    <div class="item_text">
+                        <p class="item_headline">Naruto POP</p>
+                        <p class="item_description">Product Code NARU</p>
+                    </div>
+                    <div class="item_quantity_div">
+                        <button class="item_quantity_btn item_quantity_minus">-</button>
+                        <p class="item_quantity">3</p>
+                        <button class="item_quantity_btn item_quantity_plus">+</button>
+                    </div>
+                    <div class="item_price_div">
+                        <p class="item_price">20 €</p>
+                    </div>
+                    <div class="item_total_div">
+                        <p class="item_total"><span class="item_price_span">60</span> €</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_img_div">
+                        <img class="item_img" src="luffy.jpg">
+                    </div>
+                    <div class="item_text">
+                        <p class="item_headline">Luffy POP</p>
+                        <p class="item_description">Product Code LUF</p>
+                    </div>
+                    <div class="item_quantity_div">
+                        <button class="item_quantity_btn item_quantity_minus">-</button>
+                        <p class="item_quantity">0</p>
+                        <button class="item_quantity_btn item_quantity_plus">+</button>
+                    </div>
+                    <div class="item_price_div">
+                        <p class="item_price">7.5 €</p>
+                    </div>
+                    <div class="item_total_div">
+                        <p class="item_total"><span class="item_price_span">0</span> €</p>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h2>Order Summary</h2>
+            <div class="summary_div">
+                <div>
+                    <h2 class="shopping_cart_h2">Order Summary</h2>
+                    <hr class="shopping_hr">
+                    <div class="summary_details">
+                        <p class="summary_items"><span class="summary_items_span">5</span> Items</p>
+                        <p class="summary_price"><span class="summary_price_span">70</span> €</p>
+                    </div>
+                    <hr class="shopping_hr">
+                    <p class="summary_discounts">Discounts</p>
+                    <div class="summary_discount_item">
+                        <p class="summary_discount_item_name">2x1 Goku POP offer</p>
+                        <p class="summary_discount_item_price"> -<span class="goku_discount_span">5</span>€</p>
+                    </div>
+                    <div class="summary_discount_item">
+                        <p class="summary_discount_item_name">x3 Naruto POP offer</p>
+                        <p class="summary_discount_item_price"> -<span class="naruto_discount_span">3</span>€</p>
+                    </div>
+                    <hr class="shopping_hr">
+                </div>
+                <div>
+                    <hr class="shopping_hr">
+                    <div class="summary_total">
+                        <p class="summary_total_text">Total Cost</p>
+                        <p class="summary_total_price"><span class="total_cost_span">62</span>€</p>
+                    </div>
+                    <button class="checkout_btn">Checkout</button>
+                </div>
             </div>
         </div>
     </div>    
