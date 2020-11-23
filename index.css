@@ -238,3 +238,19 @@ button.checkout_btn {
     margin-top: 15px;
     font-weight: 600;
 }
+
+.author_name {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    color: white;
+}
+
+button.item_quantity_btn:focus  {
+    outline: none;
+}
+
+button.item_quantity_btn:hover  {
+    background: #979696;
+    color: #fefeeb;
+}
