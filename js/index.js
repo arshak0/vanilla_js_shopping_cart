@@ -55,34 +55,23 @@ document.addEventListener('DOMContentLoaded', function () {
     update_html( 5, 70, 62);
 
     //Click on "+" buttons
-    document.getElementsByClassName('item_quantity_plus')[0].addEventListener('click', function() {
-        app_state.item_change(0, +1);
-    });
-    document.getElementsByClassName('item_quantity_plus')[1].addEventListener('click', function() {
-        app_state.item_change(1, +1);
-    });
-    document.getElementsByClassName('item_quantity_plus')[2].addEventListener('click', function() {
-        app_state.item_change(2, +1);
-    });
-    //---End of click on "+" buttons
 
-    //Click on "-" buttons
-    document.getElementsByClassName('item_quantity_minus')[0].addEventListener('click', function() {
-        if ( document.getElementsByClassName('item_quantity')[0].textContent != 0 ) {
-            app_state.item_change(0, -1);
-        }
-    });
-    document.getElementsByClassName('item_quantity_minus')[1].addEventListener('click', function() {
-        if ( document.getElementsByClassName('item_quantity')[1].textContent != 0 ) {
-            app_state.item_change(1, -1);
-        }
-    });
-    document.getElementsByClassName('item_quantity_minus')[2].addEventListener('click', function() {
-        if ( document.getElementsByClassName('item_quantity')[2].textContent != 0 ) {
-            app_state.item_change(2, -1);
-        }    
-    });
-    //---End of click on "-" buttons
+    for(i=0; i<=2; i++) {
+        let z = i;
+        //Click on "+" buttons
+        document.getElementsByClassName('item_quantity_plus')[z].addEventListener('click', function() {
+            app_state.item_change(z, +1);
+        });
+        //---End of click on "+" buttons
+
+        //Click on "-" buttons
+        document.getElementsByClassName('item_quantity_minus')[z].addEventListener('click', function() {
+            if ( document.getElementsByClassName('item_quantity')[z].textContent != 0 ) {
+                app_state.item_change(z, -1);
+            }
+        });
+        //---End of click on "-" buttons
+    }
 
     document.getElementsByClassName('checkout_btn')[0].addEventListener('click',function(e) {
         e.preventDefault();
