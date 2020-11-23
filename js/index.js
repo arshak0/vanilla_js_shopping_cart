@@ -2,43 +2,34 @@ var app_state = {
     price: [5, 20, 7.5],
     count: [2, 3, 0],
     discount: [-5, -3],
-    luffy_change: function( change_var ) {
-        this.count[2] += change_var;
+    item_change: function( item, change_var ) {
+        console.log(item)
+        console.log(change_var)
+        this.count[item] += change_var;
 
-        var summary_items = this.count[0] + this.count[1] + this.count[2];
-        var summary_price = this.count[0]*this.price[0] + this.count[1]*this.price[1] + this.count[2]*this.price[2];
-        var total_cost = summary_price + this.discount[0] + this.discount[1];
-        update_html(summary_items, summary_price, total_cost);
-    },
-    naruto_change: function( change_var ) {
-        this.count[1] += change_var;
-        if ( this.count[1] >= 3 ) {
-            this.discount[1] = - this.count[1];
-        }
-        else {
-            this.discount[1] = 0;
-        }
-
-        var summary_items = this.count[0] + this.count[1] + this.count[2];
-        var summary_price = this.count[0]*this.price[0] + this.count[1]*this.price[1] + this.count[2]*this.price[2];
-        var total_cost = summary_price + this.discount[0] + this.discount[1];
-        update_html(summary_items, summary_price, total_cost);
-    },
-    goku_change: function(change_var) {
-        this.count[0] += change_var;
-
+        //Check for GOKU
         if ( this.count[0] >= 2 ) {
             this.discount[0] = - (Math.floor(this.count[0]/2)*this.price[0]);
         }
         else {
             this.discount[0] = 0;
         }
+        //--End of check of GOKU
+
+        //Check for NARUTO
+        if ( this.count[1] >= 3 ) {
+            this.discount[1] = - this.count[1];
+        }
+        else {
+            this.discount[1] = 0;
+        }
+        //--End of check of NARUTO
 
         var summary_items = this.count[0] + this.count[1] + this.count[2];
         var summary_price = this.count[0]*this.price[0] + this.count[1]*this.price[1] + this.count[2]*this.price[2];
         var total_cost = summary_price + this.discount[0] + this.discount[1];
         update_html(summary_items, summary_price, total_cost);
-    },
+    }
 };
 
 function update_html ( summary_items, summary_price, total_cost ) {
@@ -65,30 +56,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Click on "+" buttons
     document.getElementsByClassName('item_quantity_plus')[0].addEventListener('click', function() {
-        app_state.goku_change(+1);
+        app_state.item_change(0, +1);
     });
     document.getElementsByClassName('item_quantity_plus')[1].addEventListener('click', function() {
-        app_state.naruto_change(+1);
+        app_state.item_change(1, +1);
     });
     document.getElementsByClassName('item_quantity_plus')[2].addEventListener('click', function() {
-        app_state.luffy_change(+1);
+        app_state.item_change(2, +1);
     });
     //---End of click on "+" buttons
 
     //Click on "-" buttons
     document.getElementsByClassName('item_quantity_minus')[0].addEventListener('click', function() {
         if ( document.getElementsByClassName('item_quantity')[0].textContent != 0 ) {
-            app_state.goku_change(-1);
+            app_state.item_change(0, -1);
         }
     });
     document.getElementsByClassName('item_quantity_minus')[1].addEventListener('click', function() {
         if ( document.getElementsByClassName('item_quantity')[1].textContent != 0 ) {
-            app_state.naruto_change(-1);
+            app_state.item_change(1, -1);
         }
     });
     document.getElementsByClassName('item_quantity_minus')[2].addEventListener('click', function() {
         if ( document.getElementsByClassName('item_quantity')[2].textContent != 0 ) {
-            app_state.luffy_change(-1);
+            app_state.item_change(2, -1);
         }    
     });
     //---End of click on "-" buttons
