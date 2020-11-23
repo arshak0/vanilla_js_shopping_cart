@@ -1,16 +1,20 @@
 # This is a note app, developed on Vanilla JS (ES 5)
 
-# Functionality:
-- Create a text note
-- View created notes
-- Delete notes
-- Edit the text of notes
-- Pin a note at the top of the list
-- Search for notes by the text inside them
-- Adding tags to a note
-- Filter notes by tags (tag combinations)
+# What I have done:
+- Implement the cart logic, load products and add / remove buttons (left side)
+- Add the presentation logic to update "Order summary" subsection whenever a product is added or removed (right site).
+- Only Vanilla JS (ES5 & ES6) is allowed is this exercise from JS perspective.
+- Feel free to use tooling (Task runners, unit test, linters or css pre-processors).
+- Follow the design as much as you can. Feel free to download the images that you consider.
+(Optional) Write tests.
+- Include a README file describing the component, your decisions, and any other useful information.
+- Make your solution available on Github
 
-In order to edit the text of a note, you just need to click on the title, text or tag of the note and edit it
+# Discounts & Promotions:
+
+- Implement these products discounts that will be applied automatically under some conditions:
+- 2-for-1 promotions: buy two of the same product, get one free, applied to GOKU items.
+bulk discounts: buying X or more of a product, the price of that product is reduced, applied to NARU items. P.e. if you buy 3 or more NARU items, the price per unit should be $19.00.
 
 # Screenshots from the program
 
