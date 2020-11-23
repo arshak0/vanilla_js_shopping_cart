@@ -18,5 +18,5 @@ bulk discounts: buying X or more of a product, the price of that product is redu
 
 # Screenshots from the program
 
-
+![image1](https://github.com/arshak0/vanilla_js_shopping_cart/blob/master/screenshots%20from%20app/Screenshot_1.png)
 ![image2](https://github.com/arshak0/vanilla_js_shopping_cart/blob/master/screenshots%20from%20app/Screenshot_2.png)
