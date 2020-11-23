@@ -3,8 +3,6 @@ var app_state = {
     count: [2, 3, 0],
     discount: [-5, -3],
     item_change: function( item, change_var ) {
-        console.log(item)
-        console.log(change_var)
         this.count[item] += change_var;
 
         //Check for GOKU
@@ -14,7 +12,6 @@ var app_state = {
         else {
             this.discount[0] = 0;
         }
-        //--End of check of GOKU
 
         //Check for NARUTO
         if ( this.count[1] >= 3 ) {
@@ -23,7 +20,6 @@ var app_state = {
         else {
             this.discount[1] = 0;
         }
-        //--End of check of NARUTO
 
         //Summarizing the items count, items price and total price to pass into the function that will do DOM-changes
         var summary_array = [];
