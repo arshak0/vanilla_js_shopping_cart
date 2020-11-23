@@ -134,6 +134,7 @@ hr.shopping_hr {
     font-size: 20px;
     height: 30px;
     margin-top: 16px;
+    cursor: pointer;
 }
 
 .item_quantity {
@@ -237,6 +238,7 @@ button.checkout_btn {
     border-radius: 6px;
     margin-top: 15px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .author_name {

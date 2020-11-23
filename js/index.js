@@ -7,24 +7,16 @@ var app_state = {
     luffy_count: 0,
     goku_discount: -5,
     naruto_discount: -3,
-    luffy_increment: function() {
-        this.luffy_count++;
+    luffy_change: function( change_var ) {
+        this.luffy_count += change_var;
 
         var summary_items = this.goku_count + this.naruto_count + this.luffy_count;
         var summary_price = this.goku_count*this.goku_price + this.naruto_count*this.naruto_price + this.luffy_count*this.luffy_price;
         var total_cost = summary_price + this.goku_discount + this.naruto_discount;
         update_html(summary_items, summary_price, total_cost);
     },
-    luffy_excrement: function() {
-        this.luffy_count--;
-
-        var summary_items = this.goku_count + this.naruto_count + this.luffy_count;
-        var summary_price = this.goku_count*this.goku_price + this.naruto_count*this.naruto_price + this.luffy_count*this.luffy_price;
-        var total_cost = summary_price + this.goku_discount + this.naruto_discount;
-        update_html(summary_items, summary_price, total_cost);
-    },
-    naruto_increment: function() {
-        this.naruto_count++;
+    naruto_change: function( change_var ) {
+        this.naruto_count += change_var;
         if ( this.naruto_count >= 3 ) {
             this.naruto_discount = - this.naruto_count;
         }
@@ -37,22 +29,8 @@ var app_state = {
         var total_cost = summary_price + this.goku_discount + this.naruto_discount;
         update_html(summary_items, summary_price, total_cost);
     },
-    naruto_excrement: function() {
-        this.naruto_count--;
-        if ( this.naruto_count >= 3 ) {
-            this.naruto_discount = - this.naruto_count;
-        }
-        else {
-            this.naruto_discount = 0;
-        }
-
-        var summary_items = this.goku_count + this.naruto_count + this.luffy_count;
-        var summary_price = this.goku_count*this.goku_price + this.naruto_count*this.naruto_price + this.luffy_count*this.luffy_price;
-        var total_cost = summary_price + this.goku_discount + this.naruto_discount;
-        update_html(summary_items, summary_price, total_cost);
-    },
-    goku_increment: function() {
-        this.goku_count++;
+    goku_change: function(change_var) {
+        this.goku_count += change_var;
 
         if ( this.goku_count >= 2 ) {
             this.goku_discount = - (Math.floor(this.goku_count/2)*this.goku_price);
@@ -66,21 +44,6 @@ var app_state = {
         var total_cost = summary_price + this.goku_discount + this.naruto_discount;
         update_html(summary_items, summary_price, total_cost);
     },
-    goku_excrement: function() {
-        this.goku_count--;
-
-        if ( this.goku_count >= 2 ) {
-            this.goku_discount = - (Math.floor(this.goku_count/2)*this.goku_price);
-        }
-        else {
-            this.goku_discount = 0;
-        }
-
-        var summary_items = this.goku_count + this.naruto_count + this.luffy_count;
-        var summary_price = this.goku_count*this.goku_price + this.naruto_count*this.naruto_price + this.luffy_count*this.luffy_price;
-        var total_cost = summary_price + this.goku_discount + this.naruto_discount;
-        update_html(summary_items, summary_price, total_cost);
-    }
 };
 
 function update_html ( summary_items, summary_price, total_cost ) {
@@ -107,30 +70,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Click on "+" buttons
     document.getElementsByClassName('item_quantity_plus')[0].addEventListener('click', function() {
-        app_state.goku_increment();
+        app_state.goku_change(+1);
     });
     document.getElementsByClassName('item_quantity_plus')[1].addEventListener('click', function() {
-        app_state.naruto_increment();
+        app_state.naruto_change(+1);
     });
     document.getElementsByClassName('item_quantity_plus')[2].addEventListener('click', function() {
-        app_state.luffy_increment();
+        app_state.luffy_change(+1);
     });
     //---End of click on "+" buttons
 
     //Click on "-" buttons
     document.getElementsByClassName('item_quantity_minus')[0].addEventListener('click', function() {
         if ( document.getElementsByClassName('item_quantity')[0].textContent != 0 ) {
-            app_state.goku_excrement();
+            app_state.goku_change(-1);
         }
     });
     document.getElementsByClassName('item_quantity_minus')[1].addEventListener('click', function() {
         if ( document.getElementsByClassName('item_quantity')[1].textContent != 0 ) {
-            app_state.naruto_excrement();
+            app_state.naruto_change(-1);
         }
     });
     document.getElementsByClassName('item_quantity_minus')[2].addEventListener('click', function() {
         if ( document.getElementsByClassName('item_quantity')[2].textContent != 0 ) {
-            app_state.luffy_excrement();
+            app_state.luffy_change(-1);
         }    
     });
     //---End of click on "-" buttons
