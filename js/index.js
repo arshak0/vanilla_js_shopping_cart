@@ -47,7 +47,7 @@ function update_html ( summary_array ) {
 // Starting the code on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function () {
     //The initiall filling of HTML elements
-    update_html( 5, 70, 62);
+    update_html( [5,70,62]);
 
     for(i=0; i<=2; i++) {
         let z = i;
