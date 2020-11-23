@@ -1,6 +1,6 @@
 # This is a note app, developed on Vanilla JS (ES 5)
 
-# What I have done:
+# Project requirements:
 - Implement the cart logic, load products and add / remove buttons (left side)
 - Add the presentation logic to update "Order summary" subsection whenever a product is added or removed (right site).
 - Only Vanilla JS (ES5 & ES6) is allowed is this exercise from JS perspective.
@@ -10,7 +10,7 @@
 - Include a README file describing the component, your decisions, and any other useful information.
 - Make your solution available on Github
 
-# Discounts & Promotions:
+## Discounts & Promotions:
 
 - Implement these products discounts that will be applied automatically under some conditions:
 - 2-for-1 promotions: buy two of the same product, get one free, applied to GOKU items.
